@@ -1,0 +1,210 @@
+/* fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poiret+One&display=swap");
+
+/* reset */
+@import url("./styles/reset.css");
+
+/* variables */
+@import url("./styles/variables.css");
+
+/* common  */
+body {
+  width: 100%;
+  height: 100vh;
+  font-size: 16px;
+  background: var(--main-bg-color);
+  overflow: hidden;
+  animation: sky 20s linear none infinite;
+  /* 해당 공간을 수직과 수평의 정렬로 오는 3대장 */
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+
+/* contents */
+h1 {
+  width: 1000px;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 150%);
+  color: var(--main-light-color);
+  font: normal 5.75rem/1 var(--poire-font-style);
+}
+
+main {
+  width: 1000px;
+  height: 400px;
+  /* 예전에 사용하던 방식 지금은 display flex 방식으로 구성방식으로 바뀌었다. */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -70%);
+  font-size: 4rem;
+  font-family: var(--poire-font-style);
+  .sky {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    .sun {
+      position: absolute;
+      /* 절대 좌표값에서 앱솔루트는 공간을 기준으로 안쪽으로 이동시 양수 바깥쪽으로 이동시 음수가 적용이다.  */
+      top: -150px;
+      left: 50%;
+      margin-left: -100px;
+      transform-origin: center 500px;
+      /* transform: translate(-50%); */
+      animation: sun 20s linear none infinite;
+    }
+    /* 구름이 움직이는 속도는 각자 다르게 설정해야 리얼하게 보인다.  */
+    .cloud1 {
+      position: absolute;
+      top: -30px;
+      left: 10%;
+      animation: flow 10s linear none infinite;
+    }
+    .cloud2 {
+      position: absolute;
+      top: 20px;
+      left: 0;
+      animation: flow 20s linear none infinite;
+    }
+  }
+  .town {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    .circle {
+      position: absolute;
+      bottom: 104px;
+      left: 50%;
+      margin-left: -165px;
+      opacity: 0.7;
+      animation: rotate 20s linear none infinite;
+    }
+    .night {
+      position: absolute;
+      bottom: 0;
+      left: 40px;
+    }
+    .morning {
+      position: absolute;
+      bottom: 0;
+      left: 40px;
+      animation: day 20s linear none infinite;
+    }
+  }
+  .people {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    animation: day 20s linear none infinite;
+    .man {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      animation: flow 9s linear none infinite;
+    }
+    .family {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      animation: flow 20s linear none infinite;
+    }
+  }
+}
+
+/* 키프레임즈는 독립적으로 써야한다.  */
+/* 이때 트랜스폼은 해당 기점을 삼고 x와 y 축을 기준으로 각도를 짜주면된다. 왼쪽 음수 오른쪽 양수  */
+@keyframes sun {
+  from {
+    opacity: 0;
+    transform: rotate(-90deg);
+  }
+  25% {
+    opacity: 1;
+    transform: rotate(-45deg);
+  }
+  50% {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+  75% {
+    opacity: 1;
+    transform: rotate(45deg);
+  }
+  to {
+    opacity: 0;
+    transform: rotate(90deg);
+  }
+}
+
+@keyframes flow {
+  from {
+    opacity: 0;
+    left: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    left: 90%;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes day {
+  from {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes sky {
+  from {
+    background: #b08f70;
+  }
+  25% {
+    background: #b1e1e2;
+  }
+  50% {
+    background: #fcd2e2;
+  }
+  75% {
+    background: #636888;
+  }
+  to {
+    background: #b08fcc;
+  }
+}

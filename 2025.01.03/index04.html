@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      p {
+        counter-increment: num;
+        /* <!-- 숫자를 1씩 증가시키는 태그 --> */
+        &::before {
+          content: counter(num) ".";
+          /* 증감되는 숫자를 자동기입을 했고 "문자열"안에 기호를 입력할수 있다. */
+        }
+        &::after {
+          content: "- "attr(data-page) "page";
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Lorem ipsum dolor sit amet</h1>
+    <p data-page="52">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus eaque
+      maxime fugiat accusantium architecto obcaecati ab voluptate vero, unde
+      molestias quae quibusdam in dolorem, similique vel sunt. Inventore, magni
+      temporibus.
+    </p>
+    <p data-page="273">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, ut
+      molestias sapiente expedita officia consequatur nam eos reprehenderit
+      rerum alias id exercitationem iusto. Repellendus, animi. Molestiae ex ad
+      sequi officia! Nihil dolore natus iusto iste labore reiciendis minima,
+      veniam nemo porro at enim officia quo, quas esse atque hic. Modi
+      necessitatibus est voluptatem maiores ullam labore autem iusto, cum aut!
+      Eveniet voluptate hic quisquam a, culpa provident! Praesentium illo non
+      suscipit officia. Omnis totam animi id odit aliquid nemo ex temporibus.
+      Expedita nesciunt, inventore consequatur sequi velit eligendi veritatis
+      aliquid. Reiciendis error aliquid sapiente, ex optio, pariatur laborum
+      autem dicta doloremque officiis inventore recusandae hic. Eveniet cumque,
+      deserunt quae pariatur est, quo exercitationem illum sapiente ad,
+      molestiae sed vel officiis.
+    </p>
+  </body>
+</html>

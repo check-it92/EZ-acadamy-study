@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      input[type="checkbox"]:checked + div {
+        height: 0;
+      }
+
+      div {
+        width: 650px;
+        height: 100%;
+        overflow: hidden;
+        border: 1px solid #f00;
+      }
+    /* 부모요소가 자식을 포함해서 적용시키고자 할때 (포함하지 않기 때문에) overflow 포함시켜줘야한다. */
+
+    </style>
+  </head>
+  <body>
+    <input type="checkbox" />
+    <div>
+      <h1>Lorem Ipsum</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. In, repudiandae
+        quae voluptates nisi cum, aperiam similique nostrum, aliquam doloribus
+        aut iure vel itaque velit fugiat officia esse deserunt adipisci!
+        Delectus! Vero natus obcaecati quasi eaque aut, libero tempore adipisci
+        corporis? Consectetur sed voluptatibus, perspiciatis iste laudantium
+        iusto, eum odio nam placeat, autem hic at itaque exercitationem nisi
+        asperiores reprehenderit illo! Nobis quasi molestiae ab soluta officia
+        laudantium pariatur quaerat repellendus doloremque. Minima, tenetur
+        distinctio! Saepe quia iusto sunt provident, eligendi, similique
+        voluptates, porro hic alias eos voluptatibus culpa. Excepturi, porro!
+      </p>
+    </div>
+  </body>
+</html>

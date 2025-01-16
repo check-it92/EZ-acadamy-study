@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D Translate</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 5px solid #f00;
+        perspective: 400px;
+        main {
+          width: 200px;
+          height: 200px;
+          position: relative;
+          transform-style: preserve-3d;
+          animation: boxitem 3s linear none infinite;
+          div {
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            line-height: 200px;
+            /* 총 높이 */
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0.3;
+            /* 정육면체 주사위 만드는 과정 */
+            backface-visibility: hidden;
+            /* 우리가 눈 앞에 보여지는 면들만 가시적으로 정면에서 보여지는 면만 보이게 하고 뒷면은 가려주는 것 */
+            &:nth-child(1) {
+              transform: rotate(0deg) translate3d(0, 0, 100px);
+              /* translate3d z축을 경계로 서로 반반의 높이만 채우면 되므로 반지름 값을 입력해주면 된다. */
+              background: red;
+            }
+            &:nth-child(2) {
+              transform: rotateY(90deg) translate3d(0, 0, 100px);
+              background: green;
+            }
+            &:nth-child(3) {
+              transform: rotateY(180deg) translate3d(0, 0, 100px);
+              background: blue;
+            }
+            &:nth-child(4) {
+              transform: rotateY(270deg) translate3d(0, 0, 100px);
+              background: yellow;
+            }
+            &:nth-child(5) {
+              transform: rotateX(90deg) translate3d(0, 0, 100px);
+              background: brown;
+            }
+            &:nth-child(6) {
+              transform: rotateX(270deg) translate3d(0, 0, 100px);
+              background: pink;
+            }
+          }
+        }
+      }
+      @keyframes boxitem {
+        from {
+          transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+        }
+        to {
+          transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+    </main>
+  </body>
+</html>

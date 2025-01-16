@@ -1,0 +1,95 @@
+@import url("./styles/reset.css");
+
+#default {
+  font-weight: bold;
+  font-size: 16px;
+}
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  main {
+    width: 390px;
+    height: 800px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    header {
+      width: 100%;
+      height: 47px;
+      border: 1px solid #ccc;
+    }
+    #main-title {
+      margin: 50px 30px 40px;
+      font-size: 1.8rem;
+    }
+    #navigation {
+      display: flex;
+      align-items: center;
+      flex-wrap: nowrap;
+      width: 500px;
+      gap: 30px;
+      margin-left: 10px;
+      .nav-item {
+        font-size: 1.1rem;
+        font-weight: 700;
+        &:first-child {
+          background-color: black;
+          color: #fff;
+          padding: 5px 10px;
+          border-radius: 28px;
+          .fa-heart {
+            color: crimson;
+            font-size: 14px;
+            display: inline-block;
+            margin-left: 3px;
+          }
+          section {
+            width: 100px;
+            margin: 40px 35px 35px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            article {
+              width: 100%;
+              display: flex;
+              flex-direction: column;
+              gap: 6px;
+              .profile {
+                gap: 6px;
+                display: flex;
+                align-items: center;
+                img {
+                  width: 28px;
+                  height: 28px;
+                }
+                .desc {
+                  display: flex;
+                  flex-direction: column;
+                  .User-name {
+                    font-size: 0.7rem;
+                  }
+                  .date {
+                    font-size: 0.6rem;
+                    color: #c5c5c5;
+                  }
+                }
+              }
+              .user-img {
+                width: 100px;
+                height: 195px;
+                img {
+                  width: 100px;
+                  height: 100%;
+                  object-fit: cover;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

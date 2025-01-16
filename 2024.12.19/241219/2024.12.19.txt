@@ -1,0 +1,171 @@
+2024.12.19
+
+이젠 프론트 OT
+
+1. 출결
+2. 매너 - 상호간의 예의
+
+수업내용
+
+1. Visual Studio Code 초기화 하는 방법
+ - C드라이브 > 사용자(User) > .vs code 삭제
+ - C드라이브 > 사용자(User) > App data > Roaming > Code 삭제 > 제어판 > VS code 제거
+
+2. Visual Studio Code 재설치
+ - 구글 > vs code 웹에서 다운 (download for windows) > vs code.exe 확장자 열기 > 동의 후 다음 + 다음 
+	> 추가작업 선택 영역에서 2가지 추가 (총 4가지 모두 선택) 
+	code 로 열기 기능 사용 : 내가 현재 작업하고자 하는 폴더를 Root 폴더로 설정한 상태에서 바로 vs code를 활성화 할수 있게
+	주는 기능을 사용하겠다. (정석적인 방법)
+	> 마무리 실행 하면 끝
+
+3. 상식적인 tip!
+- 파일명//변수명
+ kdtFed : 카멜 표기법(낙타 혹모양) 두번째 단어 시작 부분을 대문자로 변환 서로 다른 뜻이란걸 표현 <1순위로 사용>
+ kdt_fed : 스네이크 표기법 중간에 패턴을 집어넣은 방법 //단점, 공백과 특수문자가 들어갈시 디버깅시 오류가 생긴다.
+ Kdtfed : 헝가리 표기법 
+
+GUI : 그래픽 아이콘(바탕화면에 나오는 아이콘)을 선택하는 방식
+CLI : 명령문(명령프롬프트.CMD)를 활용해서 선택하는 방식
+
+보통 개발자 부분에선 CLI방식으로 진행될 것이고 후에
+https://chocolatey.org/ 이 사이트를 활용해서도 다운 받을 것임
+
+cd = change directory 폴더를 변경한다.
+mkdir = make dircetory 폴더를 생성한다.
+code . = vscode 오픈 실행하기
+cd .. = 현재 위치한 directory 에서 한단계 위 폴더로 이동할 수 있는 명령어
+vs code 에서 ctrl + `(백틱) 누르면 '터미널, 출력' 창이 뜸
+
+VS code 2가지 영역 설정
+1) 환경설정 : ctrl + ,(쉼표)
+- tap size : 기본 들여쓰기 설정 (num 2)
+- word wrap : 가로로 길게 작성된 문장을 자동으로 세로 정렬시켜주는 설정(on)
+- mouse wheel zoom : 현재 보고있는 웹에디터를 줌인/줌아웃 해줄수 있는 설정
+- emmet > variables > lang > ko : 현재 작업중인 문서의 모국어를 한글로 설정
+
+2) 확장앱 설치
+- korean language pack
+- material icon theme
+- live server : alt + l + o (단축키)
+- indent rainbow : 들여쓰기한 것을 식별 하기 쉽게
+- auto rename tag : 태그의 통일성을 간편하게
+- htmltagwrap
+- html to css autocompletion : html에서 작업한것을 css로 옮길때
+- html css support : css에서 작업한것을 htnl로 옮길때
+- css peek
+- turbo js
+- live sass compiler
+- prettier : 오류를 잡아주는 프로그램
+(별도의 설정이 필요 > 설정 창 > for 검색 > 디폴트값 prettier 설정 > format on save : check)
+- font awesome 
+- figma
+- one dark pro : 시력보호
+- powet mode
+
+2. git & git hub
+
+1) git : 형상기억관리 툴, 버전관리 툴
+	(형태 & 상태) - VER.(버젼) 관리 툴
+	- 로컬(user) 사용자의 컴퓨터에만 저장이 된다. 공유x
+
+2) git hub : 공유할 수 있는 공간을 만들 수 있다. 공유o
+		-클라우드 활용
+		- 소유주의 정보에 따라 데이터 업로드 위치가 변환 가능
+		
+* 1개의 제품 혹은 서비스를 개발
+- 혼자서 작업
+> 메인 + 서브 + 상세페이지
+=> 계속해서 수정 / 보완 시 (원본 포함) 
+EX) VER.1, VER.2 .... 할 시 여러개의 파일을 유용하게 쓸 수 있음
+
+- 팀 형태로 협업
+> 메인 A + 서브 B + 상세 C
+=> 1개의 파일로 결국 병합 하기 위해 필요한 툴
+=> 최종적인 병합단계가 아니라고 하더라도 중간단계마다 데이터 취합 후 요약정리 가능
+
+git 초기화
+
+- 제어판 > 자격증명관리자 설정
+- windows 자격증명 > 일반자격증명 > git 정보 제거
+- 제어판 > 프로그램 영역 > 추가/제거 > git 프로그램 제거
+
+git 설치
+- 설치 후 명령프롬프트 실행 > git -v, git config --list
+- "전역" 환경 변수 설정! (global) <-> 지역(local)
+- cmd(*관리자 권한 설정 모드 변경) 후 시작해야 전역에 영향을 끼친다.
+
+git hub
+https://github.com/
+유저 네임 : check-it92
+이메일 : worl5214@naver.com
+
+> 명령 프롬프트에
+-git config --global user.name "check-it92"
+-git config --global user.name "worl5214@naver.com"
+
+후에 git config --list 로 확인하면 이렇게 개인정보가 뜬다.
+git <--> git hub 서로 호환하기
+: repository (생성)
+
+로컬(local) 컴퓨터 > untracked 파일(none) > staging area (임시대기 공간)
+unmodified(수정,편집) > 파일 commited (repository 생성,관리) 
+
+*개발자가 버전관리 // 1~10 데이터를 n회에 나눠서 버전관리
+- 1번에 데이터 1개의 버전 관리
+- 2,3,4 각각의 버전 관리
+
+> 파일
+* 현재 개발자가 작업중인 폴더 : working directory
+여러 사람이 다중적으로 컴퓨터 이용시 터미널을 이용해서 의견을 주고 받을수 있다.
+
+git init = 터미널에서 초기화 하는 방법
+(git 에서 문제발생시 돌이킬수 없을 정도이면 초기화 하는 극약처방법)
+
+git add . = staging area 에 저장하고 파일을 더하겠다.
+
+git status = 현재 상태를 의미
+
+git remote -v 입력시 이렇게 출력이 됨
+origin  https://github.com/check-it92/kdtFed-241219.git (fetch)
+origin  https://github.com/check-it92/kdtFed-241219.git (push)
+
+git remote add origin https://github.com/check-it92/kdtFed-241219.git
+내 오리진 주소(내 깃허브와 연결하겠단 의미)
+
+git commit -m "(message)" = 내가 뭘 저장했는지를 알수있게 표시하는 것
+					(라벨을 다는 의미)
+
+git push origin master = 깃허브에 있는 나의 파일을 보내겠다는 뜻
+> Branch - 1개의 최상위 저장공간(Repository)=main=master(내가 owner 일때)에 
+		하위의 복수공간(Branch)을 만들수 있다는 뜻
+
+위에 공정단계를 vs코드 자체 왼쪽 트리를 보면 git아이콘에서 한번에 저장할 수 있다. 커밋을 해준다. ( 스테이징 에어리어) 까지 자동으로 저장을 해준다.
+
+단, git hub로 넘어가진 않았기 때문에 branch 까지 찍어줘야 한다.
+옆에 ...을 누르고 (푸시) 해준다. 그러면 git hub에 올라 가게 된다.
+그러면 마지막 (최종적으로 수정/보완 한 파일) 병합이 되어서 올라가게 된다.
+
+**집 또는 다른 공간에서 (git hub) 저장된 데이터를 내려받아 사용하는법
+
+1. git hub 메인 페이지에서 레파스토리 왼쪽 상단 클릭 후
+코드(초록색 버튼) 다운로드.zip 파일을 다운받아 해제 후 사용하는 방법
+
+2. 현재 git hub repository clone(*복제) 하는 방법
+
+새폴더 > 마우스 우측 키로 비주얼코드 열기 > 터미널 열기 > git bash 선택
+> 명령어(git clone {깃허브 주소}) 입력 > 완료
+
+클론 같은 경우는 팀업을 할때 여러 사람의 자료를 병합하고 재조립할 수있어서
+활용 가능성이 크다.
+이 때 해당 원작자의 저장공간(히스토리) {.git}까지 다 해오기 때문에 
+최초의 1회 가 적당하다.
+
+3. git pull orgin master 
+이 때는 .git 을 제외한 (그 원작자의 히스토리) 파일을 옮겨올 수 있다.
+그렇기 때문에 git init(초기화)를 해주고 >.git생성
+후에 git pull (hub 주소입력) 하면 파일만 생성이 된다.
+
+windows(캡션 키) + R => 명령키
+L sysdm.cpl 관리자 화면이 뜸
+L 시스템 속성 > 고급 > 환경변수 > 시스템변수 > path > 편집 > 새로만들기
+> 찾아보기 > 유저이름(개인컴퓨터) > App data > 확인(최종) 

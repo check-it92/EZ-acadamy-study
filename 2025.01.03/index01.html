@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* reset css */
+      * {
+        margin: 0;
+        padding: 0;
+        /* *는 전체 선택자를 뜻한다. 고유값을 리셋 시킨 것 이것을 "reset css"라고도 한다.*/
+      }
+      p {
+        color: brown;
+        &#special {
+          color: dodgerblue;
+        }
+      }
+      /* li { id 선택자
+        &#second { &(네스팅)한번더 쓰겠다.라는뜻 기호에 가져올 태그 #()로 써서 하나씩 적용용
+          background: aqua;
+        }
+        &#fourth {
+          background: aqua;
+        }
+      } */
+      /* :&기호로 중복의 p태그 안에 같이 분별해서 쓰는 것이 "네스팅 기능" */
+
+      /* p#special { 이대로 써도 되지만 p를생략하고 #special 로 써도 된다. id선언을 했기 때문에에
+        color: dodgerblue;
+      } */
+      .bgstyle {
+        background: aqua;
+      }
+
+      /* input {
+        &[type="text"] {
+          background: crimson;
+        }
+        &[type="password"] {
+          background: dodgerblue;
+        }
+      } */
+
+      #header {
+        & > h1 {
+          color: brown;
+        }
+      }
+
+      #listEx {
+        #firstLi + li {
+          color: crimson;
+        }
+        #firstLi ~ li {
+          font-size: 30px;
+        }
+      }
+      h3 {
+        &:hover {
+          color: aqua;
+        }
+        &:active {
+          color: crimson;
+        }
+      }
+      /* h3:hover {
+        color: aqua;
+      }
+
+      h3:active {
+        color: crimson;
+      } 동일한 태그에 해당 기능을 중복하지 않고 네스팅 기능을 사용하는게 깔끔끔*/
+
+      input {
+        &:enabled {
+          background: greenyellow;
+        }
+        &:disabled {
+          background: gainsboro;
+        }
+        &:focus {
+          background: tomato;
+        }
+      }
+    </style>
+    <!-- html 태그 안에 쓰이기 때문에 "내부 스타일" 방식이라 한다. -->
+  </head>
+  <body>
+    <h1>오늘은 신나는 금요일</h1>
+    <!-- <h1 style="background: crimson;">오늘은 신나는 금요일</h1> -->
+    <!-- 이 태그안에 바로 스타일을 적용 시킨것이 "인라인 스타일" -->
+    <!-- 기본적으로 마진값과 패딩값이 포함되어 있다. -->
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur dolore
+      voluptas dicta? Nisi perferendis, minima, ad delectus magni maiores enim
+      ullam nemo eaque aliquid sit quaerat architecto aut, impedit facilis.
+    </p>
+    <p id="special">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi veniam
+      quae, adipisci consectetur et, iusto omnis quod expedita, vel non ratione
+      voluptatibus aliquam dolore natus nemo ipsam? Amet, laudantium
+      perferendis.
+    </p>
+    <ul id="listEx">
+      <li id="firstLi">첫 번째</li>
+      <li class="bgstyle">두 번째</li>
+      <li>세 번째</li>
+      <li class="bgstyle">네 번째</li>
+    </ul>
+    <hr />
+    <form action="">
+      <input type="text" name="" id="" />
+      <input type="password" name="" id="" />
+    </form>
+    <hr />
+    <div id="header">
+      <h1 class="title">Lorem Ipsum</h1>
+      <div id="nav">
+        <h1 class="title">navigation</h1>
+      </div>
+    </div>
+    <h3>User Action Selector</h3>
+    <hr />
+    <form action="">
+      <h2>Enabled</h2>
+      <input type="text" name="enabled" id="enabled" enabled />
+      <h2>disabled</h2>
+      <input type="text" name="disabled" id="disabled" disabled />
+    </form>
+  </body>
+</html>

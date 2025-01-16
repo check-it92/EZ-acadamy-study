@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      ul,
+      li {
+        list-style: none;
+      }
+
+      a {
+        text-decoration: none;
+        /* 해당앵커의 링크 밑줄 부분을 (데코레이션) 없앨 수 있다. */
+        color: #000;
+      }
+
+      main {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .gnb {
+        display: flex;
+        gap: 15px;
+        /* 해당 텍스트 들의 간격 */
+        padding: 50px 30px;
+        /* 위,아래/좌,우 */
+        border-radius: 10px;
+        background: #fff;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        /* x축,y축 그림자 량 해당색상*/
+        li {
+          a {
+            font-size: 14px;
+            position: relative;
+            padding-bottom: 4px;
+            &::before {
+              content: "";
+              position: absolute;
+              /* 위치 절대값을 선언한뒤 변경하겠다는 뜻 */
+              left: 50%;
+              bottom: 0;
+              /* 왼쪽0,바닥0에서 시작점을 잡겠다 라는 뜻 */
+              /* 왼쪽 50% 선언시 텍스트로 부터 왼쪽 50 = 가운데 라는 개념과 같다. */
+              width: 0;
+              /* 해당 텍스트 만큼의 너비를 가지겠다 */
+              height: 1px;
+              background: dodgerblue;
+              transition: all 0.5s;
+              transform: translateX(-50%);
+            }
+            &:hover::before {
+              width: 100%;
+              /* 해당 텍스트 너비 만큼 적용시키겠다. */
+            }
+          }
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <ul class="gnb">
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">ABOUT</a></li>
+        <li><a href="#">SERVICE</a></li>
+        <li><a href="#">PORTFOLIO</a></li>
+        <li><a href="#">CONTACT</a></li>
+      </ul>
+    </main>
+  </body>
+</html>

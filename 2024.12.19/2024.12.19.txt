@@ -1,0 +1,47 @@
+2024.12.19
+
+이젠 프론트 OT
+
+1. 출결
+2. 매너 - 상호간의 예의
+
+수업내용
+
+1. Visual Studio Code 초기화 하는 방법
+ - C드라이브 > 사용자(User) > .vs code 삭제
+ - C드라이브 > 사용자(User) > App data > Roaming > Code 삭제 > 제어판 > VS code 제거
+
+2. Visual Studio Code 재설치
+ - 구글 > vs code 웹에서 다운 (download for windows) > vs code.exe 확장자 열기 > 동의 후 다음 + 다음 
+	> 추가작업 선택 영역에서 2가지 추가 (총 4가지 모두 선택) 
+	code 로 열기 기능 사용 : 내가 현재 작업하고자 하는 폴더를 Root 폴더로 설정한 상태에서 바로 vs code를 활성화 할수 있게
+	주는 기능을 사용하겠다. (정석적인 방법)
+	> 마무리 실행 하면 끝
+
+3. 상식적인 tip!
+- 파일명//변수명
+ kdtFed : 카멜 표기법(낙타 혹모양) 두번째 단어 시작 부분을 대문자로 변환 서로 다른 뜻이란걸 표현 <1순위로 사용>
+ kdt_fed : 스네이크 표기법 중간에 패턴을 집어넣은 방법 //단점, 공백과 특수문자가 들어갈시 디버깅시 오류가 생긴다.
+ Kdtfed : 헝가리 표기법 
+
+GUI : 그래픽 아이콘(바탕화면에 나오는 아이콘)을 선택하는 방식
+CLI : 명령문(명령프롬프트.CMD)를 활용해서 선택하는 방식
+
+보통 개발자 부분에선 CLI방식으로 진행될 것이고 후에
+https://chocolatey.org/ 이 사이트를 활용해서도 다운 받을 것임
+
+cd = change directory 폴더를 변경한다.
+mkdir = make dircetory 폴더를 생성한다.
+code . = vscode 오픈 실행하기
+
+VS code 2가지 영역 설정
+1) 환경설정 : ctrl + ,(쉼표)
+- tap size : 기본 들여쓰기 설정 (num 2)
+- word wrap : 가로로 길게 작성된 문장을 자동으로 세로 정렬시켜주는 설정(on)
+- mouse wheel zoom : 현재 보고있는 웹에디터를 줌인/줌아웃 해줄수 있는 설정
+- emmet > variables > lang > ko : 현재 작업중인 문서의 모국어를 한글로 설정
+
+2) 확장앱 설치
+- korean language pack
+- material icon theme
+- live server : alt +l +o (단축키)

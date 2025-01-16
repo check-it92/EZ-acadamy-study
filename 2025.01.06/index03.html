@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        /* box-sizing: border-box; 스크롤을 내려야지 보인다*/
+      }
+      #container {
+        width: 100%;
+        /* min-width: 800px; */
+        /* 같이 움직이다가 800 밑으로 떨어지게 되면 고정값으로 적용되어 같이 움직이지 않게 된다. */
+        max-width: 1300px;
+        /* 같이 움직이다가 1300 이상으로 떨어지게 되면 고정값으로 적용되어 같이 움직이지 않게 된다. */
+        height: 200px;
+        main {
+          width: 100%;
+          height: 50%;
+          border: 5px solid #f00;
+          p {
+            height: 300px;
+          }
+        }
+      }
+      /* 해당 텍스트가 가지고 있는 비율 (전체화면 기준 x) */
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <main>
+        <h1>Hello World!</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          Exercitationem dolores debitis obcaecati expedita commodi aspernatur
+          animi sit incidunt qui. Consectetur minima explicabo, quaerat sapiente
+          excepturi repellendus tempora cumque deserunt natus.
+        </p>
+      </main>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="http://127.0.0.1:5500/index07.html" method="post">
+      <input type="text" name="search" /><br />
+      <!-- search=나이키 > 쿼리 값 (질문) 해당 질문에 관한 것을 요구한것-->
+      <!-- utf8&query=나이키 -->
+      <input type="password" /><br />
+      <!-- 이 경우에는 텍스트의 값을 안보이게 블라인드 처리 된다. -->
+      <input type="file" /><br />
+      <!-- 이 경우에는 로컬컴퓨터의 특정값(파일) 해당 서버에 보낼수 있다. -->
+      <input type="button" value="나는 버튼" /><br />
+      <h4>당신이 좋아하는 스포츠를 선택해주세요(복수선택가능)</h4>
+      <!-- 이 경우에는 해당 버튼을 누를 시 내가 입력한 변수에 따라 작용이 되어진다. (예)회원가입...등 -->
+      <input type="checkbox" name="sport1" />축구
+      <input type="checkbox" name="sport4" />야구
+      <input type="checkbox" name="sport2" />농구
+      <input type="checkbox" name="sport5" />배구
+      <input type="checkbox" name="sport3" />배드민턴
+      <input type="checkbox" name="sport6" />족구<br />
+      <!-- 이 경우 복수선택을 할 수 있는 설문조사 같은 경우 외관상 보여지는 의미만 보여지고
+        내적인 name 값을 줘야 한다 이때 복수일 경우에는 상이하게 각각 줘야 서버에 전달이 된다.-->
+      <h4>당신의 성별은?</h4>
+      <input id="female" type="radio" name="gender" /><label for="female">여자</label>
+      <label for="male"><input id="male" type="radio" name="gender" />남자 </label><br />
+      <!-- 이 경우 단일선택을 적용시킬때 name은 사용자가 선택한 값(정확한 명시)<참,거짓>을 서버에 전달시킬때 -->
+      <input type="submit" value="검색" /><br />
+    </form>
+  </body>
+</html>

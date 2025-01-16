@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      a {
+        text-decoration: none;
+        color: inherit;
+        &:link::after {
+          content: " - " attr(href);
+        }
+      }
+      /* a:link::after {
+        content: " - " attr(href);
+      }
+      앵커선택자 중에 링크가 있는 태그를 가져와라 */
+    </style>
+  </head>
+  <body>
+    <h1>
+      <a>DAUM</a>
+    </h1>
+    <h1><a href="https://www.naver.com"></a>NAVER</h1>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background: orange;
+      color: #fff;
+      text-align: center;
+      line-height: 100px;
+      font-weight: bold;
+      transition-duration: 2s;
+      /* transition-property: ;
+      transition-timing-function: ;
+      transition-delay: ;
+      위의 3가지 효과를 최상의 transition에 축약형으로 쓸수 있다. */
+      &:hover {
+        width: 200px;
+        height: 300px;
+      }
+      /* 마우스로 꾹 누른다면 */
+      &:active {
+        background: tomato;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <div class="box">1</div>
+  </div>
+</body>
+</html>

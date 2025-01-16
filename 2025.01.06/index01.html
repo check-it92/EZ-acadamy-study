@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 속성 선택자 type 에 password 에만 주고 싶다. */
+    /* 부정 선택자는 :not () 를 주고 해당태그의 반대 되는 것에만 주고 싶다. */
+    input:not([type="password"]) {
+      background: crimson;
+    }
+  </style>
+</head>
+<body>
+  <input type="text" name="" id="">
+  <input type="password" name="" id="">
+  <input type="text" name="" id="">
+  <input type="password" name="" id="">
+</body>
+</html>
