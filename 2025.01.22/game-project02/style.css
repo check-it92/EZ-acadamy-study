@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  /* 16px = 0.625 = %단위로 볼때 62.5%가 된다. */
+  font-size: 62.5%;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  font-size: 2.2rem;
+  /* 위에 설정해놓은 값으로 인해 16px=1.6rem / 18px=1.8re,=m / 24px=2.4rem으로 적용시키면 된다. 계산식보다 간단단 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("https://i.namu.wiki/i/FrL_oH7PMtIpmqjvIteBGnbhE208cSDPw6zhJt13b50RCR2CGelWufPyStlRScb_keUXPZkVLRD-R9QPeW_lOQ.webp")
+    center/cover no-repeat;
+    /* 전후문자 선택자 로 뒤에 배경을 죽여주는 역할 포지션 변경도 있다.*/
+  &::before { 
+    content: "1";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+  }
+}
+
+#main {
+  /* 포지션 변경이 적용되어야 앞 뒤로 위치가 지정된다. */
+  position: relative;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    .block {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+  .buttons {
+    display: flex;
+    gap: 14px;
+    margin: 20px;
+    button {
+      flex: 1;
+      height: 40px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.6rem;
+      box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+      color: #fff;
+      opacity: 0.7;
+      cursor: pointer;
+      transition: opacity 0.3s;
+      &.red {
+        background: crimson;
+      }
+      &.blue {
+        background: dodgerblue;
+      }
+      &.green {
+        background: yellowgreen;
+      }
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+  .result {
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-align: center;
+  }
+}

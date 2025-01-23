@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .parent {
+        border: 5px solid #000;
+        background: lightcyan;
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-gap: 10px;
+        div {
+          background: darkorange;
+          color: #fff;
+          text-align: center;
+          line-height: 100px;
+          &.item {
+            background: crimson;
+            /*라인으로 정의하고자 할때
+            grid-column-start: 1;
+            grid-column-end: 3; 
+            grid-column: 1/3; 축약형 */
+            /* 공간을 기준으로 첫 번째 줄에 서 부터 공간(칸) 2개까지 병합한다면면
+            grid-column: 1 / span 2; */
+            
+            /* 라인으로 정의할때
+            grid-column-start: 2; 2번째 줄에서 시작을 하겠다.
+            grid-column-end: 4;
+            grid-column: 2/4; */
+            /* 공간으로 정의할때
+            grid-column: 2 / span 2; */
+
+            /* 가로줄도 똑같다. */
+            /* grid-row-start: 1;
+            grid-row-end: 5;
+            grid-row: 1 / 5;
+            grid-row: 1 / span 4; */
+
+            /* 두 번째 서부터는 내가 어디서 시작할지 명시를 해줘야 한다.
+            grid-column-start: 2; 
+            grid-row: 1/5; */
+          }
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <div>1</div>
+      <div class="item">2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+      <div>9</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,11 @@
+2025.01.20 Netlify 로 배포하기
+
+장점 : 배포된 상태에서도 수정/보완이 가능하다.
+
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+깃에서 커밋전에 우리가 스테이터스 상태에서 확인해볼 수 있는것
+rm = remove 지울수 있다는것 스테이징 에어리에 에서
+
+단계 정리해서 다시 쓰기
