@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style01.css" />
+    <script defer src="./script01.js"></script>
+    <title>index01</title>
+  </head>
+  <body>
+    <main id="container">
+      <form name="price-system">
+        <img src="./imgs/sale.jpg" alt="sale" />
+        <ul>
+          <li>
+            <label for="origin-price">원래 가격</label>
+            <input type="text" name="origin-price" id="origin-price" />
+          </li>
+          <li>
+            <label for="rate">할인율</label>
+            <input type="text" name="rate" id="rate" />
+          </li>
+          <li>
+            <input id="btn" type="button" value="할인가격 계산하기" />
+          </li>
+        </ul>
+      </form>
+      <div id="result"></div>
+    </main>
+  </body>
+</html>
