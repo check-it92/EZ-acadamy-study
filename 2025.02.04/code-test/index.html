@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <script defer src="./script.js"></script>
+    <title>codeing test</title>
+  </head>
+  <body>
+    <form name="minnum" method="post">
+      <h1>세 숫자 중 최소값 구하기</h1>
+      <div id="user-input">
+        <p>
+          <label for="num-a">A : </label>
+          <input id="num-a" min="1" max="100" type="text" />
+        </p>
+        <p>
+          <label for="num-b">B : </label>
+          <input id="num-b" min="1" max="100" type="text" />
+        </p>
+        <p>
+          <label for="num-c">C : </label>
+          <input id="num-c" min="1" max="100" type="text" />
+        </p>
+        <input id="accept" type="submit" value="계산하기" />
+        <div id="result"></div>
+      </div>
+    </form>
+  </body>
+</html>

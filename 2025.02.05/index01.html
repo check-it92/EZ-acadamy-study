@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="./script01.js"></script>
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      ul,
+      li {
+        list-style: none;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      html {
+        font-size: 62.5%;
+      }
+
+      body {
+        font-size: 1.6rem;
+        #container {
+          width: 1200px;
+          margin: 100px auto 0;
+          #heading {
+            display: flex;
+            gap: 20px;
+            img {
+              width: 200px;
+              border-radius: 8px;
+            }
+            .desc {
+              width: 70%;
+              h2 {
+                margin: 8px 0 20px;
+              }
+              p {
+                margin: 6px 0;
+                &:nth-of-type(2) {
+                  line-height: 140%;
+                }
+              }
+              #order {
+                border: none;
+                border-radius: 8px;
+                padding: 6px 10px;
+                font-size: 1.8rem;
+                cursor: pointer;
+              }
+            }
+          }
+          #orderInfo {
+            border: 1px solid #ccc;
+            margin-top: 50px;
+            padding: 14px;
+            border-radius: 4px;
+          }
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main id="container">
+      <div id="heading">
+        <div class="img-nike">
+          <img
+            src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/e6354fc4-0482-4573-8ac9-bd0c304fa635/NIKE+DUNK+LOW+RETRO+LTD.png"
+            alt="shoes"
+          />
+        </div>
+        <div class="desc">
+          <h1>상품설명</h1>
+          <h2 id="title">
+            상품명 : 나이키 덩크 로우 레트로 LTD <span>[마감임박상품]</span>
+          </h2>
+          <p>
+            클래식 아이템은 어떤 스타일에도 잘 어울리는 법입니다. 덩크 로우는
+            프리미엄 소재와 푹신한 패딩에 아이코닉한 컬러 블로킹을 더해 놀랍도록
+            편안한 착화감을 오랫동안 제공합니다.
+          </p>
+          <p>
+            빠듯한 일정으로 수많은 매시업과 수정을 거듭한 끝에 탄생한 나이키
+            덩크는 85-86 시즌 대학 농구 경기에 등장했습니다. 오리지널 칼리지
+            컬러 디자인은 학교에 대한 소속감을 높여 주었지만, 덩크의 인기는 그리
+            높지 않았습니다. 그런데 이처럼 낮은 인지도와 특유의 평평하고 그립력
+            좋은 밑창은 오히려 스케이트보더들의 마음을 사로잡는 계기가
+            되었습니다. 수십 년이 지난 지금도 이 클래식한 데일리 아이템은 수많은
+            컬러웨이로 끊임없이 인기를 끌며, 여전히 강력한 영향력을 보여주고
+            있습니다.
+          </p>
+          <button id="order">상품주문하기</button>
+        </div>
+      </div>
+      <div id="orderInfo">주문내역</div>
+    </main>
+  </body>
+</html>

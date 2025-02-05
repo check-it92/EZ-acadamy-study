@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleDetection": "force",
+    "skipLibCheck": true,
+    "outDir": "dist",
+    "strict": true
+  },
+  "include": ["src"]
+}
+
+// 여기까지가 우리가 기본적으로 사용하는 옵션들이다.
