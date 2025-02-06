@@ -1,0 +1,48 @@
+2025.02.06
+
+수업내용
+
+** 사업아이템
+내 일상과 관련된 또는 내가 잘하는 쪽으로 연관지어 생각해보자.
+(돈이 될수 있을 요소로) -> 디자인 개발
+
+forEach(매개변수, index, array) 총 이 3가지를 가져올 수있다.
+매개변수 안에 매칭되는 = index값을 찾아올수 있는 것이다. ( 유사 배열 형식으로 )
+
+또는 array 를 쓸경우는 해당 목록을 배열형식으로 나열 할때
+그럴 때 쓴다. (스프레드 형식으로 ) 쇼핑몰의 장바구니 형식
+
+css의 고수들은 접두어 data 를 활용을 많이 한다. 
+<a data-text="ABOUT" href="#">ABOUT</a> 이런식으로 쓰인다. 고유명사로 만들수 있다.
+attr() data 라는 접두어를 가진 속성값을 찾아오는데 많이 쓰인다.
+this.getAttribute("data-image"); data 이미지의 각각의 속성을 가져오고자 할때 쓰는 함수
+
+scss 할때 mixin 을 활용하면 좋다.
+html 에서 동일한 클래스명을 설정해 놓고 두개의 스타일 값이 같다면 여러번 쓰지말고
+@mixin innerContents { 이런식으로 쓰고
+  .contents-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    .title {
+      color: map-get($map: $color, $key: theme-color);
+      font: bold 1.4rem/1 "arial";
+    }
+    .subtitle {
+      font: normal 1.4rem/1 "arial";
+    }
+  }
+}
+내가 원하는 부분에 @incloude  innerContents  태그로 넣어주면 된다.
+
+li::before {
+            content: "\f105";
+            font-family: fontawesome;
+          } 유니코드 방식
+
+2. 타입주석 - 변수명 오른쪽 : 타입기입
+3. 타입추론 - 해당 변수 입력된 값 => 타입추론 => 타입 매칭
+4. 리터럴 타입 - 템플릿 리터럴("문자+변수")
+5. 참조타입 - 배열, 객체, 튜플 대표적인 3가지
+** 튜플이란? 배열을 최초 선언시점, 배열이 들어가야 하는 값 및 타입을 정의!!
+예로) 튜플로 설정을 해놓았다면 그 이상 할수 없음
