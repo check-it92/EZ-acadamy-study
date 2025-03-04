@@ -1,0 +1,143 @@
+/* reset */
+@import "./reset.scss";
+
+/* variables */
+@import "./variables.scss";
+
+/* responsive */
+@media screen and (max-width: 768px) {
+  .cd-section {
+    height: auto;
+    & > div {
+      height: auto;
+      .content {
+        position: static;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  /* ==== header ==== */
+  header {
+    z-index: 10;
+    transition: all 0.5s;
+    &.active {
+      background: map-get($map: $color, $key: main-light-color);
+      border-bottom: 1px solid map-get($map: $color, $key: input-focus-color);
+    }
+    .gnb-inner {
+      .gnb {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        background: map-get($map: $color, $key: main-light-color);
+        width: 250px;
+        height: 100vh;
+        box-shadow: 0 0 10px rgba($color: #000000, $alpha: 1);
+        transition: all 0.5s;
+        .menu {
+          display: block;
+          padding-top: 40px;
+          a {
+            color: map-get($map: $color, $key: main-dark-color);
+            display: block;
+            text-align: right;
+            font-size: 2rem;
+            padding-right: 20px;
+          }
+        }
+        .slogan {
+          display: none;
+        }
+        &.active {
+          right: 0;
+        }
+      }
+      .trigger {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 24px;
+        height: 14px;
+        cursor: pointer;
+        span {
+          position: absolute;
+          width: 100%;
+          height: 1px;
+          background: map-get($map: $color, $key: main-dark-color);
+          transition: all 0.5s;
+          &:nth-child(1) {
+            top: 0;
+          }
+          &:nth-child(2) {
+            top: 50%;
+          }
+          &:nth-child(3) {
+            top: 100%;
+          }
+        }
+        &.active span {
+          &:nth-child(1) {
+            top: 50%;
+            transform: rotate(45deg);
+          }
+          &:nth-child(2) {
+            opacity: 0;
+          }
+          &:nth-child(3) {
+            top: 50%;
+            transform: rotate(-45deg);
+          }
+        }
+      }
+    }
+  }
+
+  /* ==== gototop ==== */
+  .gototop {
+    display: block;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    border: 1px solid map-get($map: $color, $key: main-light-color);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 50px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.5s;
+    &.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* ==== home ==== */
+  .home-inner {
+    height: 100vh;
+    .welcome-text {
+      transform: translate(-50%, -50%) scale(0.7);
+      width: 100%;
+    }
+    .home-heading {
+      left: 20px;
+      span {
+        font-size: 5rem;
+      }
+    }
+  }
+
+  /* ==== about ==== */
+  .about-inner {
+    height: auto;
+    padding: 20px;
+    background: map-get($map: $color, $key: about-bg-color);
+    .about-items {
+      position: static;
+    }
+  }
+}

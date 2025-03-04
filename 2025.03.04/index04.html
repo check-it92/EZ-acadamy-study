@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="./script04.js"></script>
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .container {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          h1 {
+            margin-bottom: 20px;
+          }
+          #result {
+            div {
+              margin: 20px;
+              p {
+                font-size: 20px;
+              }
+            }
+          }
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <h1>상품정보</h1>
+      <div id="result"></div>
+    </main>
+  </body>
+</html>

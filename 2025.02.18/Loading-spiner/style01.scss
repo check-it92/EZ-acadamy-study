@@ -1,0 +1,21 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.character {
+  width: 100px;
+  height: 100px;
+  background: url("./loading-Img.png") center/90% no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
