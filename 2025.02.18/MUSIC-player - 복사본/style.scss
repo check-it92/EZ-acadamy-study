@@ -1,0 +1,380 @@
+@import "./styles/reset.scss";
+@import "./styles/variables.scss";
+
+@mixin btnStyle {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 50%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+@mixin btnDetail {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background: map-get($map: $color, $key: light);
+  position: absolute;
+  left: 0;
+  transition: all 0.5s;
+}
+
+figure {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  // background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+  background-image: url("https://www.harpersbazaar.co.kr/resources/online/online_image/2024/05/28/eb5f67fa-c7bb-4c1e-ba30-d1ca1b97e742.jpg")
+    cover/center no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  .menu {
+    position: absolute;
+    top: 8vh;
+    right: 4vw;
+    color: map-get($map: $color, $key: orange);
+    font-size: 2.4rem;
+  }
+  & > h1 {
+    position: absolute;
+    top: 7vh;
+    left: 4vw;
+    font-size: 0;
+    strong {
+      color: map-get($map: $color, $key: orange);
+      letter-spacing: 1px;
+      font: bold 3.6rem/1.4 "arial";
+    }
+    span {
+      font: normal 1rem/1 "arial";
+      display: block;
+      letter-spacing: 2px;
+      color: map-get($map: $color, $key: light);
+      opacity: 0.8;
+      text-align: end;
+    }
+  }
+  & > p {
+    position: absolute;
+    bottom: 7vh;
+    left: 50%;
+    transform: translateX(-50%);
+    letter-spacing: 2px;
+    opacity: 0.8;
+    color: map-get($map: $color, $key: light);
+    font: normal 1.2rem/1 "arial";
+  }
+  section {
+    width: 20vw;
+    height: 65vh;
+    border: 1px solid #faebd7;
+    position: absolute;
+    top: 140%;
+    left: 50%;
+    margin-left: -10vw;
+    margin-top: -25vh; // 마진으로 주는것이 가장 안전 => 후에 트랜스폼은 우선순위가 있기때문에 충돌남
+    transform-origin: center center;
+    transition: transform 0.5s ease;
+    article {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      &.on {
+        .inner {
+          opacity: 0.9;
+          transform: scale(1.1);
+        }
+      }
+      .inner {
+        width: 100%;
+        height: 100%;
+        background: map-get($map: $color, $key: inner);
+        padding: 2vh 2.5vw 2vh;
+        display: flex;
+        justify-content: center;
+        align-content: space-evenly; // 두개씩 서로 양쪽끝으로 가서 대칭이 되게끔
+        border-radius: 10px;
+        box-shadow: 10px 10px 20px rgba($color: #000000, $alpha: 0.1);
+        flex-wrap: wrap;
+        opacity: 0.6;
+        transform: scale(0.8);
+        transition: opacity 1s, transform 1s;
+        .pic {
+          width: 15vw;
+          height: 15vw;
+          border: 1px solid #ccc;
+          border-radius: 50%;
+          position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-position: center;
+          background-size: cover;
+          background-repeat: no-repeat;
+          &::before,
+          &::after {
+            content: "";
+            width: inherit;
+            height: inherit;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-image: inherit;
+            background-position: inherit;
+            background-size: inherit;
+            background-repeat: inherit;
+          }
+          &::before {
+            content: "";
+            transform: translateY(10%);
+            filter: blur(20px) brightness(1.6);
+          }
+          &.on::after {
+            animation: ani 4s linear infinite;
+          }
+          &.on::before {
+            animation: ani2 4s linear infinite;
+          }
+          .dot1 {
+            width: 4vw;
+            height: 4vw;
+            background: map-get($map: $color, $key: dot);
+            z-index: 3;
+            border-radius: 50%;
+            box-shadow: inset 5px 5px 10px rgba($color: #000000, $alpha: 0.1); // 그림자가 안쪽으로 파고들수 있게 inset
+            position: relative;
+            .dot2 {
+              width: 1.5vw;
+              height: 1.5vw;
+              background: map-get($map: $color, $key: title);
+              z-index: 3;
+              border-radius: 50%;
+              box-shadow: inset 5px 5px 10px rgba($color: #000000, $alpha: 0.1);
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              .dot3 {
+                width: 0.1vw;
+                height: 0.1vw;
+                background: map-get($map: $color, $key: light);
+                z-index: 3;
+                border-radius: 50%;
+                box-shadow: inset 5px 5px 10px rgba($color: #fff, $alpha: 0.1);
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+              }
+            }
+          }
+        }
+        .txt {
+          text-align: center;
+          width: 100%;
+          .progress-container {
+            width: 100%;
+            height: 10px;
+            border-radius: 10px;
+            background: #ccc;
+            position: relative;
+            margin-bottom: 30px;
+            .progress-bar {
+              width: 0%;
+              height: 100%;
+              border-radius: 10px;
+              background: map-get($map: $color, $key: orange);
+              transition: width 0.1s;
+              cursor: pointer;
+            }
+          }
+          h2 {
+            font-size: 2rem;
+            color: map-get($map: $color, $key: color);
+          }
+          p {
+            font-size: 1.4rem;
+            margin: 2vh 0 3vh;
+            color: map-get($map: $color, $key: desc);
+          }
+          ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30%;
+            li {
+              cursor: pointer;
+              opacity: 0.6;
+              transition: all 0.5s;
+              &.play {
+                transform: scale(1.5);
+                opacity: 0.9;
+                &:hover {
+                  transform: scale(2);
+                  opacity: 1;
+                }
+              }
+              &:hover {
+                opacity: 1;
+                transform: scale(1.5);
+              }
+              .active-repeat {
+                color: #ff6b6b !important;
+              }
+            }
+          }
+        }
+      }
+    }
+    transition: all 1s;
+  }
+  .btnPrev {
+    @include btnStyle;
+    text-align: left;
+    left: 50%;
+    transform: translate(-20vw, -50%); // 혼용해서 써도 된다.
+
+    &:hover {
+      span {
+        opacity: 0;
+        transform: translateX(100%); // 자신의 크기만큼 양수값으로
+      }
+      &::before {
+        transform: rotate(-30deg);
+      }
+      &::after {
+        transform: rotate(30deg);
+      }
+    }
+    span {
+      color: map-get($map: $color, $key: light);
+      font: normal 1.2rem/1 "arial";
+      opacity: 1;
+      transform: translateX(30%);
+      transition: all 0.5s;
+    }
+    &::before {
+      @include btnDetail;
+      top: 50%;
+      transform: rotate(-180deg);
+      transform-origin: left center; // 중심축 설정을 변경하는 요소
+    }
+    &::after {
+      @include btnDetail;
+      bottom: 50%;
+      transform: rotate(180deg);
+      transform-origin: left center;
+    }
+  }
+  .btnNext {
+    @include btnStyle;
+    text-align: right;
+    right: 50%;
+    transform: translate(20vw, -50%); // 혼용해서 써도 된다.
+    &:hover {
+      span {
+        opacity: 0;
+        transform: translateX(-100%);
+      }
+      &::before {
+        transform: rotate(-30deg);
+      }
+      &::after {
+        transform: rotate(30deg);
+      }
+    }
+    span {
+      color: map-get($map: $color, $key: light);
+      font: normal 1.2rem/1 "arial";
+      opacity: 1;
+      transform: translateX(-30%);
+      transition: all 0.5s;
+    }
+    &::before {
+      @include btnDetail;
+      top: 50%;
+      transform: rotate(-180deg);
+      transform-origin: right center; // 중심축 설정을 변경하는 요소
+    }
+    &::after {
+      @include btnDetail;
+      bottom: 50%;
+      transform: rotate(180deg);
+      transform-origin: right center;
+    }
+  }
+}
+
+@keyframes ani {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes ani2 {
+  0% {
+    transform: translateY(10%) rotate(0deg);
+  }
+  100% {
+    transform: translateY(10%) rotate(360deg);
+  }
+}
+
+.loading {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    background: gray;
+    animation: loading 1.5s linear infinite;
+    &:nth-child(1) {
+      background: #999;
+    }
+    &:nth-child(2) {
+      background: #333;
+      animation-delay: 0.8s;
+    }
+  }
+}
+
+@keyframes loading {
+  0% {
+    top: 0;
+    left: 0;
+  }
+  25% {
+    top: 0;
+    left: calc(100% - 10px);
+  }
+  50% {
+    top: calc(100% - 10px);
+    left: calc(100% - 10px);
+  }
+
+  75% {
+    top: calc(100% - 10px);
+    left: 0;
+  }
+
+  100% {
+    top: 0;
+    left: 0;
+  }
+}
