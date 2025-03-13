@@ -1,0 +1,12 @@
+/* .body {
+  background: #f00;
+  color: #fff;
+}
+
+#test {
+  background: #f00;
+} */
+
+/* 오리지널 css 에서 하던 것처럼 입력하면 된다.
+  대신 클래스값을 불러와서 하는것 처럼 하면 된다.
+*/

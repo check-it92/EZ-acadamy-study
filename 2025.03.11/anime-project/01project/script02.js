@@ -1,0 +1,29 @@
+const tl = anime.timeline({
+  easing: "linear",
+  duration: 1000,
+});
+
+// 동시에 주는것과 별개로 한번 더 부여하면 2차효과가 된다.
+
+tl.add({
+  targets: ".circle1",
+  translateX: 500,
+})
+  .add({
+    targets: ".circle1",
+    translateY: 500,
+  })
+  .add({
+    targets: ".circle1",
+    translateX: 0,
+  })
+  .add({
+    targets: ".circle1",
+    translateY: 0,
+  })
+  .add({
+    targets: ".circle2",
+    rotate: 360,
+    borderRadius: 0,
+    scale: 1.5,
+  });
