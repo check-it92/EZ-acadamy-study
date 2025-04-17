@@ -106,9 +106,65 @@ body {
     }
     &#sec0 {
       background-image: linear-gradient(to top, #9795f0 0%, #fbc8d4 100%);
+      .inner {
+        svg,
+        img {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+        }
+        .svg1 {
+          transform: translate(-49.5%, -49.5%);
+          fill: none;
+          stroke: #fff;
+        }
+        .svg2 {
+          transform: translate(-50%, -50%);
+          width: 660px;
+          height: 340px;
+        }
+      }
     }
     &#sec1 {
       background-image: linear-gradient(to top, #0250c5 0%, #d43f8d 100%);
+      .inner {
+        flex-direction: column;
+        h1 {
+          img {
+            width: 400px;
+          }
+        }
+        .gage_wrap {
+          width: 500px;
+          margin-top: 50px;
+          ul {
+            display: flex;
+            li {
+              width: 25%;
+              text-align: center;
+              .gage {
+                margin: 0 auto;
+                width: 15px;
+                height: 150px;
+                background: rgba($color: #ffffff, $alpha: 0.2);
+                position: relative;
+                padding: 5px;
+                .gage_in {
+                  position: absolute;
+                  bottom: 0;
+                  width: 5px;
+                  height: 0;
+                  background: map-get($map: $color, $key: light);
+                }
+              }
+              .gage_tit {
+                color: map-get($map: $color, $key: light);
+                margin-top: 20px;
+              }
+            }
+          }
+        }
+      }
     }
     &#sec2 {
       background-image: linear-gradient(to top, #e8198b 0%, #c7eafd 100%);

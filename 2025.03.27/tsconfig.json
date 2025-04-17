@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "NodeNext",
+    "moduleDetection": "force",
+    "moduleResolution": "nodenext",
+    "outDir": "dist",
+    "strict": true
+  },
+  "include": ["src"]
+}
+
+/* 
+src라고 붙은 명칭의 안에 파일들을 컴파일링 하겠다. 라는 뜻
+보통 대다수는 compilerOptions 안에 기입을 해야한다.
+include 는 특별케이스로 외부에 기입이 가능
+
+"target": "ES5", 2015년 이전 버전 :구버전 함수가 function () {} 함수로 쓰인다. 화살표함수x
+"target": "ESNext" 가장 최신의 버전 (최신순) 으로 쓴다는 뜻
+"module": "CommonJS" 2015년 이전 버전 CJS방식으로 쓰인다.
+"module": "ESNext" 최신버전으로 쓰인다.
+"moduleResolution": "nodenext" 모듈간의 충돌을 방지해주는 요소인데 이걸쓸 경유 모듈또한 NodeNext로 변경해줘야 한다.
+
+
+"strict": true || false
+: 타입 정의 마저 같은 형변환이 이루어지도록 기준이 엄격하게 제어하는 요소
+defalut = false 살짝 느슨하게 풀어준다.
+export const hello = (message: string) => 이런식으로 형을 정의해줘야 한다.
+
+
+*/

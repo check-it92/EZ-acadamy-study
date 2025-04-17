@@ -1,0 +1,48 @@
+** 수업내용
+
+-> Redux 라이브러리 업그레이드 버전
+=> 이제는 createStore를 사용하지 않는다.
+요즘은 configureStore를 사용한다.
+
+그럼, 차이점이 뭐지?
+- 전개연산자 구문을 사용하지 않는다. (비효율성 줄임)
+- 타입지정 후 무언갈 하는것을 => 함수로 대체할수 있게 되었다.
+
+새롭게 변화된 문법은 Redux Core를 설치할 필요 없이
+Toolkit에 다 포함되어 져 있다. 혹시나, 기존 Redux가 설치되어있다면 지우고(uninstall)
+새로 "RTK(Redux Tool Kit)"를 설치하면된다.
+
+> createAsyncThunk : 함수
+데이터 가져오기를 관리하기 위해 thunk나 reducer를 작성할 필요가 없습니다 .
+RTK 쿼리는 실제로 createAsyncThunk모든 요청에 ​​대해 내부적으로 사용되며, 
+캐시 데이터 수명을 관리하기 위한 사용자 정의 미들웨어도 함께 사용됩니다.
+
+따로 액션 , 리듀서 페이지 나눌 필요없이 *한번에 비동기적 처리가 가능하게 해준다.
+
+* 기존 Redux 문법 관련 변경사항!
+
+1. Redux > store에서 사용했었던 함수명칭 변경!
+- createStore => configureStore
+- action객체를 만들때, 매번 type을 통해서 식별 => 함수형태로 바꾸고자 하는 목적
+- case에 따라 기존 전개연산자 구문을 사용했었던 문법 => 사용하지 않기 위한 목적
+- extension 확장프로그램 설치 시, 불필요하게 세팅했던 것을 굳이 하지 않아도 될수 있도록 하기 위해서
+
+2. configureStore > reducer
+- reduct Toolkit > createSlice 라는 함수를 호출
+- 객체를 인자값 => 3개의 값을 적용
+- 리듀서이름, 초기값, type에 따른 case를 함수로 만들어서 선언!!
+
+3. store >
+- createStore => configureStore로 변경
+
+4. 기존 Redux의 약점, 비동기처리를 할 수 없었기 때문에 action객체 생성시, 미들웨어를 거쳤던
+   그 과정을 보다 효율적으로 개선. 처리!
+- action객체 파일 따로 // reducer함수 파일 따로
+- slice라는 파일로 하나로 합쳐서 관리하자!
+- createAsyncThunk함수가 탄생!
+
+5. createAsyncThunk 의 특징!
+- 기본적으로 promise를 반환하는 형태를 띄고있음 => 선언부 & 실행부 두개로 나눠서 관리!
+- 선언부에서는 기존 action파일에서 비동기적으로 처리했었던 데이터를 직접입력.
+- 실행부에서는 바닐라 자바스크립트에서 promise가 작동되었던 원리를 그대로 벤치마킹해서 
+   pending // fullfield // rejected 세가지의 상태변환을 할 수 있게 해준다.

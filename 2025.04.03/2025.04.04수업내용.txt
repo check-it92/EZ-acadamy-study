@@ -1,0 +1,21 @@
+** 수업내용
+
+Rest API
+html 구조에서 input태그 활용할때 
+(method) 요소로 활용하였다.
+- get : 데이터에 대한 조회를 할때
+- post : 특정데이터를 등록할때
+- delete : 특정데이터를 삭제할때
+- put : 특정데이터를 업데이트 할때
+
+GraphQL API
+- 
+
+리액트에서 .env 는 가장 root에 빼줘야 한다. 그리고 한번 껏다 켜줘야
+서버에서 받아올수있다.
+
+const API_KEY = import.meta.env.VITE_API_KEY; 이런식으로 속성을 써주고
+우리가 vite를 쓰고 있기 때문에 이런식으로 설정값을 써주면 된다.
+
+react Bootstrap
+=> 스크립트에서 썻던거랑 같은 내용이다.

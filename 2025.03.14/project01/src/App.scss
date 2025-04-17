@@ -1,0 +1,219 @@
+@use "sass:map";
+/*
+파일 맨 위에 @use "sass:map"; 추가 / 라이브러리에서 가져와서 써라 @import = 와 같은의미
+모든 map-get($map: $color, $key: value) 형식을 map.get($color, value) 형식으로 변경
+해당 버전부터 내장함수가 제거될 예정이라 이런식으로 변경해서 사용!!
+*/
+
+$color: (
+  light: #fff,
+  dark: #000,
+  border: #808080,
+  date: #1f93ff,
+);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+.App {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.Header {
+  text-align: center;
+  h1 {
+    color: map.get($color, date);
+    margin-top: 10px;
+  }
+}
+
+.TodoEditor {
+  h4 {
+    text-align: center;
+    padding-bottom: 10px;
+  }
+  .editor_wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    input[type="text"] {
+      flex: 1;
+      border: 1px solid map.get($color, border);
+      border-radius: 30px;
+      padding: 14px;
+      &::placeholder {
+        opacity: 1;
+        transition: all 0.3s;
+      }
+      &:focus {
+        outline: none;
+        border: 1px solid map.get($color, date);
+        &::placeholder {
+          opacity: 0;
+        }
+      }
+    }
+    input[type="button"] {
+      width: 80px;
+      border: 1px solid map.get($color, date);
+      padding: 12px;
+      background: map.get($color, date);
+      border-radius: 30px;
+      color: map.get($color, light);
+      cursor: pointer;
+      font-size: 1.5rem;
+      transition: all 0.3s;
+      &:hover {
+        background: map.get($color, light);
+        color: map.get($color, date);
+        border: 1px solid map.get($color, date);
+        transition: all 0.3s;
+      }
+    }
+  }
+}
+
+.TodoList {
+  h4 {
+    margin-bottom: 10px;
+  }
+  .count {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 10px;
+  }
+  .todolist_header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+
+    .select_all {
+      display: flex;
+      align-items: center;
+      margin-right: 15px;
+      cursor: pointer;
+
+      input {
+        margin-right: 5px;
+      }
+
+      span {
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+  .todolist-inner {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: 10px;
+    button {
+      border: none;
+      padding: 4px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1.4rem;
+      transition: all 0.3s;
+      &:hover {
+        background: map.get($color, date);
+        color: map.get($color, light);
+      }
+    }
+  }
+
+  .searchbar {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid map.get($color, border);
+    padding: 12px;
+    margin: 10px 0 20px;
+    &::placeholder {
+      opacity: 1;
+      transition: all 0.3s;
+    }
+    &:focus {
+      outline: none;
+      border-bottom: 1px solid map.get($color, date);
+      &::placeholder {
+        opacity: 0;
+      }
+    }
+  }
+
+  .list_wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+.TodoItem {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed map.get($color, border);
+  .checkbox_col {
+    width: 20px;
+    text-align: center;
+  }
+  .title_col {
+    flex: 1;
+    padding-bottom: 2px;
+  }
+  .date_col {
+    font-size: 1.4rem;
+    color: map.get($color, border); // 'boder'에서 'border'로 수정
+    margin-right: 5px;
+    padding: 3px 0;
+  }
+  .btn_col {
+    button {
+      border: none;
+      padding: 4px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1.4rem;
+      transition: all 0.3s;
+      &:hover {
+        background: map.get($color, date);
+        color: map.get($color, light);
+      }
+    }
+  }
+}

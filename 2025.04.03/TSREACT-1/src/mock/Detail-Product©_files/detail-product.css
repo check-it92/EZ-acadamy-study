@@ -1,0 +1,272 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header {
+  z-index: 10;
+  height: 70px;
+}
+
+/* 레이아웃 */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1920px;
+  padding-bottom: 100px;
+  background: #fff;
+  position: relative;
+}
+
+/* 상품 상세 페이지 스타일 */
+.product-detail {
+  display: flex;
+  width: 100%;
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 40px 20px;
+  gap: 40px;
+}
+
+/* 갤러리 영역 */
+.product-gallery {
+  flex: 1;
+  position: relative;
+}
+.product-gallery .gallery-main {
+  width: 100%;
+}
+.product-gallery .gallery-main img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.product-gallery .gallery-main .gallery-controls {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+}
+.product-gallery .gallery-main .gallery-controls button {
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 10px;
+}
+.product-gallery .gallery-main .gallery-controls button i {
+  font-size: 20px;
+  color: #000;
+  transition: all 0.3s ease;
+}
+.product-gallery .gallery-main .gallery-controls button i:hover {
+  opacity: 0.7;
+}
+
+/* 상품 정보 영역 */
+.product-info {
+  flex: 1;
+}
+.product-info .product-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: #000;
+}
+.product-info .product-price-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.product-info .product-price-info .price-label {
+  width: 70px;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+.product-info .product-price-info .price-value {
+  font-weight: 600;
+}
+.product-info .product-options {
+  margin-bottom: 30px;
+}
+.product-info .product-options .option-item {
+  margin-bottom: 20px;
+}
+.product-info .product-options .option-item .option-label {
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.product-info .product-options .option-item .option-select select {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #d9d9d9;
+  border-radius: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="6"><path d="M0 0l6 6 6-6z" fill="%23333"/></svg>') no-repeat;
+  background-position: right 15px center;
+}
+.product-info .product-options .option-item .option-select select:focus {
+  outline: none;
+  border-color: #d9d9d9;
+}
+.product-info .product-accordion {
+  margin-bottom: 30px;
+}
+.product-info .product-accordion .category {
+  border-top: 1px solid #e0e0e0;
+}
+.product-info .product-accordion .category:last-child {
+  border-bottom: 1px solid #e0e0e0;
+}
+.product-info .product-accordion .category .title-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  cursor: pointer;
+}
+.product-info .product-accordion .category .title-top h2 {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+.product-info .product-accordion .category .title-top i {
+  font-size: 1.4rem;
+  transition: transform 0.3s ease;
+}
+.product-info .product-accordion .category .subcategory {
+  padding: 0 0 15px;
+  line-height: 1.6;
+  font-size: 1.4rem;
+}
+.product-info .product-accordion .category .subcategory.active {
+  display: block;
+}
+.product-info .product-accordion .category .subcategory p {
+  margin-bottom: 10px;
+}
+.product-info .product-accordion .category .subcategory p:last-child {
+  margin-bottom: 0;
+}
+.product-info .product-actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.product-info .product-actions button {
+  width: 80%;
+  padding: 15px 0;
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-align: center;
+  border-radius: 0;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+.product-info .product-actions button:hover {
+  opacity: 0.8;
+}
+.product-info .product-actions .buy-now-btn {
+  background-color: #000;
+  color: #fff;
+  border: none;
+}
+.product-info .product-actions .add-to-cart-btn {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #000;
+}
+.product-info .product-actions .kakao-pay-btn {
+  background-color: #fedf32;
+  color: #3c1e1e;
+  border: none;
+}
+
+/* Share Your Moment 섹션 */
+.share-moment {
+  width: 100%;
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 0 20px 40px;
+}
+.share-moment .section-title {
+  font-size: 5rem;
+  font-weight: 400;
+  margin-bottom: 30px;
+  line-height: 1;
+  text-decoration: underline;
+  color: #000;
+}
+.share-moment .moment-grid {
+  width: 80%;
+}
+.share-moment .moment-grid .moment-row {
+  display: flex;
+  gap: 20px;
+}
+.share-moment .moment-grid .moment-row .moment-item {
+  flex: 1;
+}
+.share-moment .moment-grid .moment-row .moment-item .moment-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+.share-moment .moment-grid .moment-row .moment-item .moment-link .moment-image {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.share-moment .moment-grid .moment-row .moment-item .moment-link .moment-image span {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 1.3rem;
+  z-index: 1;
+}
+.share-moment .moment-grid .moment-row .moment-item .moment-link .moment-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+.share-moment .moment-grid .moment-row .moment-item .moment-link .moment-image img:hover {
+  transform: scale(1.05);
+}
+.share-moment .moment-grid .moment-row .moment-item .moment-link .moment-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 10px;
+}
+.share-moment .moment-grid .moment-row .moment-item .moment-link .moment-tags .tag {
+  display: inline-block;
+  background-color: #000;
+  color: #fff;
+  font-size: 1.6rem;
+  padding: 5px 10px;
+  border-radius: 15px;
+}
